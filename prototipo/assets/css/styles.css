@@ -323,14 +323,18 @@ section[id] {
     background-color: var(--cor-superficie);
 }
 
+
 .tabela-responsiva table {
-    min-width: 20rem;
+    width: 100%;
+    table-layout: fixed;
 }
 
 .tabela-responsiva th,
 .tabela-responsiva td {
-    white-space: nowrap;
+    padding: 0.75rem 0.25rem;
+    overflow-wrap: anywhere;
 }
+
 
 
 /* 11. Estado ativo do menu */
