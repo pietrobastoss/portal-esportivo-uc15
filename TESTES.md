@@ -26,6 +26,8 @@
 
 - **Zoom de 200%:** conteúdo legível e cabeçalho deixa de ficar fixo quando a altura disponível da janela é reduzida.
 
+- **Orientação da tela:** conteúdo, menu, notícias, jogos e tabela verificados em retrato e paisagem; sem problemas visuais identificados.
+
 Observação: os estados de interação e o movimento reduzido foram conferidos no código; nem todos foram testados individualmente no navegador.
 
 ## 2. Próximas validações
