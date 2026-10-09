@@ -46,3 +46,14 @@ de destaque para elementos importantes.
 
 Os conteúdos iniciais serão fictícios e utilizados para demonstrar
 a estrutura e as funcionalidades do portal.
+
+## 11. Sistema CSS e unidades
+
+* **Cores:** as cores principais são definidas por variáveis CSS em `:root`, facilitando a manutenção da identidade visual.
+* **Espaçamentos:** são utilizadas unidades relativas, como `rem`, para adaptar os espaços ao tamanho de fonte configurado.
+* **Tipografia fluida:** a função `clamp()` permite limitar o tamanho dos títulos entre valores mínimos e máximos.
+* **Layout:** porcentagens, `min()`, `max()` e Grid ajudam a adaptar o conteúdo a diferentes larguras de tela.
+* **Estados interativos:** links possuem estados de hover, foco visível e destaque da seção ativa.
+* **Movimento:** a rolagem suave é desativada quando o usuário solicita redução de movimento nas configurações do sistema.
+
+As regras podem ser consultadas em `prototipo/assets/css/styles.css`.
