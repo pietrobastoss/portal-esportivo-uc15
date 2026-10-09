@@ -9,6 +9,7 @@
         name="description"
         content="Acompanhe notícias, jogos e classificação do futebol brasileiro no Temporada em Jogo."
     >
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <title>Temporada em Jogo | Portal Esportivo</title>
 </head>
@@ -95,47 +96,50 @@
             </article>
         </section>
 
-        <section
-            id="classificacao"
-            aria-labelledby="titulo-classificacao"
-        >
-            <h2 id="titulo-classificacao">Classificação</h2>
+       
+    <section
+    id="classificacao"
+    aria-labelledby="titulo-classificacao"
+    >
+    <h2 id="titulo-classificacao">Classificação</h2>
 
-            <p>
-                Tabela ilustrativa. Os dados abaixo não representam
-                a classificação real de uma competição.
-            </p>
+    <p>
+        Tabela ilustrativa. Os dados abaixo não representam
+        a classificação real de uma competição.
+    </p>
 
-            <table>
-                <caption>Classificação fictícia do campeonato</caption>
+    <div class="tabela-responsiva">
+        <table>
+            <caption>Classificação fictícia do campeonato</caption>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Pos.</th>
-                        <th scope="col">Equipe</th>
-                        <th scope="col">Pontos</th>
-                    </tr>
-                </thead>
+            <thead>
+                <tr>
+                    <th scope="col">Pos.</th>
+                    <th scope="col">Equipe</th>
+                    <th scope="col">Pontos</th>
+                </tr>
+            </thead>
 
-                <tbody>
-                    <tr>
-                        <td>1º</td>
-                        <td>Equipe Azul</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td>2º</td>
-                        <td>Equipe Vermelha</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>3º</td>
-                        <td>Equipe Verde</td>
-                        <td>10</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <tbody>
+                <tr>
+                    <td>1º</td>
+                    <td>Equipe Azul</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>2º</td>
+                    <td>Equipe Vermelha</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>3º</td>
+                    <td>Equipe Verde</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </section>
     </main>
 
     <footer>
@@ -145,5 +149,6 @@
         </p>
         <p>Conteúdo esportivo demonstrativo.</p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

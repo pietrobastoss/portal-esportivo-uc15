@@ -1,0 +1,342 @@
+
+/* ========================================
+   TEMPORADA EM JOGO
+   Estilos iniciais — Mobile First
+======================================== */
+
+/* 1. Variáveis visuais */
+:root {
+    --cor-principal: #c62828;
+    --cor-principal-escura: #8e0000;
+    --cor-fundo: #f5f5f5;
+    --cor-superficie: #ffffff;
+    --cor-texto: #212121;
+    --cor-texto-secundario: #666666;
+    --cor-borda: #dddddd;
+
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-medio: 1rem;
+    --espacamento-grande: 1.5rem;
+    --espacamento-extra: 2rem;
+
+    --largura-conteudo: 75rem;
+    --raio-borda: 0.5rem;
+}
+
+/* 2. Padronização */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--cor-principal);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 4px;
+}
+
+/* 3. Cabeçalho */
+header {
+    padding: var(--espacamento-medio);
+    color: var(--cor-superficie);
+    background-color: var(--cor-principal);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header > a {
+    color: inherit;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
+header p {
+    margin: var(--espacamento-pequeno) 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacamento-medio);
+    margin: var(--espacamento-medio) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    color: var(--cor-superficie);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 4. Conteúdo principal */
+main {
+    width: min(100% - 2rem, var(--largura-conteudo));
+    margin-inline: auto;
+    padding-block: var(--espacamento-medio);
+}
+
+section {
+    margin-bottom: var(--espacamento-extra);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+h2 {
+    padding-bottom: var(--espacamento-pequeno);
+    border-bottom: 2px solid var(--cor-principal);
+}
+
+article {
+    margin-bottom: var(--espacamento-medio);
+    padding: var(--espacamento-medio);
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+}
+
+article p:first-child {
+    color: var(--cor-texto-secundario);
+}
+
+article a {
+    font-weight: 700;
+}
+
+/* 5. Tabela de classificação */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--cor-superficie);
+}
+
+caption {
+    padding: var(--espacamento-medio);
+    font-weight: 700;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: left;
+}
+
+th {
+    color: var(--cor-superficie);
+    background-color: var(--cor-principal);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+/* 6. Rodapé */
+footer {
+    padding: var(--espacamento-grande);
+    color: var(--cor-superficie);
+    background-color: #252525;
+    text-align: center;
+}
+
+footer p {
+    margin: var(--espacamento-pequeno) 0;
+}
+
+
+/* 7. Ajustes para telas maiores */
+@media (min-width: 48rem) {
+    header {
+        padding-inline: max(1rem, calc((100% - var(--largura-conteudo)) / 2));
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    main {
+        padding-block: var(--espacamento-grande);
+    }
+
+    #noticias {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--espacamento-medio);
+    }
+
+    #noticias h2 {
+        grid-column: 1 / -1;
+    }
+
+    #noticias article {
+        margin-bottom: 0;
+    }
+
+    #jogos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--espacamento-medio);
+    }
+
+    #jogos h2 {
+        grid-column: 1 / -1;
+    }
+
+    #jogos article {
+        margin-bottom: 0;
+    }
+}
+
+
+/* ========================================
+   8. Melhorias visuais dos conteúdos
+======================================== */
+
+/* Destaque principal */
+#inicio > section:first-child > article {
+    border-top: 5px solid var(--cor-principal);
+    padding: var(--espacamento-grande);
+}
+
+#inicio > section:first-child > article p:first-child {
+    color: var(--cor-principal);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+/* Títulos das notícias */
+#noticias article h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+#noticias article p {
+    color: var(--cor-texto-secundario);
+}
+
+/* Links com destaque */
+article a {
+    display: inline-block;
+    margin-top: var(--espacamento-pequeno);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+article a:hover {
+    color: var(--cor-principal-escura);
+}
+
+/* Jogos */
+#jogos article h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+#jogos article p:last-child {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* Interação visual na tabela */
+tbody tr:hover {
+    background-color: #ffebee;
+}
+
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+/* 9. Acessibilidade e navegação */
+
+/* Área de interação confortável */
+nav a {
+    display: inline-block;
+    padding: 0.4rem 0;
+}
+
+/* Destaque visível ao navegar com teclado */
+header a:focus-visible,
+nav a:focus-visible,
+footer a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Indicação visual ao passar o mouse */
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+/* Evita que os títulos fiquem escondidos ao navegar por âncoras */
+section[id] {
+    scroll-margin-top: 1rem;
+}
+
+
+/* 10. Tabela responsiva */
+.tabela-responsiva {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--raio-borda);
+    background-color: var(--cor-superficie);
+}
+
+.tabela-responsiva table {
+    min-width: 20rem;
+}
+
+.tabela-responsiva th,
+.tabela-responsiva td {
+    white-space: nowrap;
+}
+
+
+/* 11. Estado ativo do menu */
+nav a[aria-current="location"] {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    font-weight: 800;
+}
