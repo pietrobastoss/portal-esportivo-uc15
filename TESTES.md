@@ -30,6 +30,8 @@
 
 Observação: os estados de interação e o movimento reduzido foram conferidos no código; nem todos foram testados individualmente no navegador.
 
+- **Tela estreita (320 × 568 px):** títulos das notícias, textos dos jogos e tabela de classificação verificados; conteúdo organizado, sem rolagem horizontal na página.
+
 ## 2. Próximas validações
 
 - Testar a navegação por teclado.
