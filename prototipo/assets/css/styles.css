@@ -122,11 +122,21 @@ h2 {
 }
 
 article {
+    container-type: inline-size;
     margin-bottom: var(--espacamento-medio);
     padding: var(--espacamento-medio);
     background-color: var(--cor-superficie);
     border: 1px solid var(--cor-borda);
     border-radius: var(--raio-borda);
+}
+@container (min-width: 30rem) {
+    article h3 {
+        font-size: 1.35rem;
+    }
+
+    article p {
+        max-width: 65ch;
+    }
 }
 
 article p:first-child {
