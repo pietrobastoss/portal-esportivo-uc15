@@ -1,5 +1,30 @@
 # Plano de testes
 
-Status: planejamento inicial.
+## 1. Testes manuais realizados
 
-Os procedimentos, resultados e evidências serão registrados à medida que as funcionalidades forem implementadas e testadas.
+### Menu mobile
+
+- **Abrir o menu:** aprovado.
+- **Fechar o menu:** aprovado.
+- **Atualização do texto e do ícone:** aprovada.
+- **Navegação até a seção selecionada:** aprovada.
+- **Fechamento do menu após selecionar uma opção:** aprovado.
+
+### CSS e responsividade
+
+- **Estados de interação:** regras de `hover`, `active` e `focus-visible` identificadas no CSS.
+- **Movimento reduzido:** regra `prefers-reduced-motion` identificada.
+- **Tabela responsiva:** contêiner com rolagem horizontal configurado.
+
+Observação: os itens de CSS acima foram conferidos no código; nem todos foram testados individualmente no navegador.
+
+## 2. Próximas validações
+
+- Testar a navegação por teclado.
+- Verificar a responsividade em diferentes larguras de tela.
+- Conferir o contraste e a visibilidade do foco.
+- Implementar testes automatizados conforme a evolução do projeto.
+
+## 3. Status
+
+Os testes manuais do menu mobile foram aprovados. As demais validações permanecem pendentes.
