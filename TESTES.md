@@ -42,3 +42,8 @@
 Os testes manuais de responsividade, menu mobile, orientação da tela, zoom de 200% e navegação por teclado foram realizados e aprovados conforme as verificações descritas.
 
 As validações de contraste, os testes individuais dos estados de interação e movimento reduzido, os testes automatizados e os testes em dispositivos físicos permanecem pendentes.
+
+- **Lighthouse:** pontuação de 100/100 em acessibilidade na análise realizada em 09/10/2026.
+- **Verificações automáticas:** nenhuma auditoria de acessibilidade foi identificada como reprovada no relatório consultado.
+- **Verificações manuais:** o Lighthouse apresentou itens adicionais que precisam ser conferidos manualmente; nem todos se aplicam necessariamente às funcionalidades atuais do projeto.
+- **Contraste:** a pontuação automática foi excelente, mas o contraste ainda precisa ser medido especificamente para confirmar a conformidade.
