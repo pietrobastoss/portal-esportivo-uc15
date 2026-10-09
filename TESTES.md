@@ -32,6 +32,7 @@ Observação: os estados de interação e o movimento reduzido foram conferidos 
 
 - **Tela estreita (320 × 568 px):** títulos das notícias, textos dos jogos e tabela de classificação verificados; conteúdo organizado, sem rolagem horizontal na página.
 
+- **Navegação por teclado:** links e elementos interativos acessados com `Tab` e `Shift + Tab`; destaque visual do foco identificado e links testados com `Enter`.
 ## 2. Próximas validações
 
 - Testar a navegação por teclado.
