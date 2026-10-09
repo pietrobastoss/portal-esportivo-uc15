@@ -429,3 +429,10 @@ nav a[aria-current="location"] {
         gap: 1.5rem;
     }
 }
+
+/* Evita que o cabeçalho cubra o conteúdo em telas baixas */
+@media (max-height: 30rem) {
+    header {
+        position: static;
+    }
+}

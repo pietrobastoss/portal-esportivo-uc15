@@ -24,6 +24,8 @@
 
 - **Container Queries:** adaptação dos cartões verificada no navegador em larguras de 768 px e 1024 px.
 
+- **Zoom de 200%:** conteúdo legível e cabeçalho deixa de ficar fixo quando a altura disponível da janela é reduzida.
+
 Observação: os estados de interação e o movimento reduzido foram conferidos no código; nem todos foram testados individualmente no navegador.
 
 ## 2. Próximas validações
