@@ -129,7 +129,7 @@ article {
     border: 1px solid var(--cor-borda);
     border-radius: var(--raio-borda);
 }
-@container (min-width: 30rem) {
+@container (min-width: 25rem) {
     article h3 {
         font-size: 1.35rem;
     }

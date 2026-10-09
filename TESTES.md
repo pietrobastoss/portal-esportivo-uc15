@@ -13,10 +13,16 @@
 ### CSS e responsividade
 
 - **Estados de interação:** regras de `hover`, `active` e `focus-visible` identificadas no CSS.
+
 - **Movimento reduzido:** regra `prefers-reduced-motion` identificada.
+
 - **Tabela responsiva:** aprovada em telas de 320 px, 375 px, 768 px e 1024 px, além de larguras inferiores a 320 px.
+
 - **Responsividade geral:** testada nas larguras de 320 px, 375 px, 768 px e 1024 px.
+
 - **Container Queries:** regra `@container (min-width: 30rem)` implementada nos cartões; comportamento visual conferido no navegador.
+
+- **Container Queries:** adaptação dos cartões verificada no navegador em larguras de 768 px e 1024 px.
 
 Observação: os estados de interação e o movimento reduzido foram conferidos no código; nem todos foram testados individualmente no navegador.
 
