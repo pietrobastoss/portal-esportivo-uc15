@@ -22,13 +22,24 @@
 
         <p>As principais notícias do futebol brasileiro</p>
 
-        <nav aria-label="Navegação principal">
-            <ul>
+       
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+            >
+        <span class="menu-toggle-text">Menu</span>
+        <span class="menu-toggle-icon" aria-hidden="true">☰</span>
+        </button>
+
+        <nav aria-label="Navegação principal" id="menu-principal">
+        <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#noticias">Notícias</a></li>
                 <li><a href="#jogos">Jogos</a></li>
                 <li><a href="#classificacao">Classificação</a></li>
-            </ul>
+        </ul>
         </nav>
     </header>
 
