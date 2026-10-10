@@ -28,6 +28,11 @@
 - **Navegação por teclado:** links e elementos interativos acessados com `Tab` e `Shift + Tab`; destaque visual do foco identificado e links testados com `Enter`.
 - **Legibilidade visual:** textos e links avaliados visualmente; aparência considerada legível. O contraste ainda precisa ser medido com uma ferramenta específica.
 
+- **Contraste do texto principal:** texto `#212121` sobre fundo branco `#FFFFFF`, com razão de contraste aproximada de 16,1:1; aprovado para WCAG AA e AAA.
+- **Contraste vermelho e branco:** combinação `#C62828` e `#FFFFFF`, com razão de contraste aproximada de 5,62:1; aprovada para texto normal no WCAG AA.
+- **Estado hover do botão do menu:** texto vermelho sobre fundo branco; contraste aproximado de 5,62:1, aprovado para texto normal no WCAG AA.
+- **Limitação da verificação:** o fundo real do cabeçalho e o estado normal do botão do menu ainda precisam ser confirmados. Os resultados acima se referem apenas às combinações de cores identificadas.
+
 **Observação:** os estados de interação e o movimento reduzido foram conferidos no código; nem todos foram testados individualmente no navegador.
 
 ## 2. Validações pendentes
