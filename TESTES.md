@@ -22,6 +22,7 @@
 - **Zoom de 200%:** conteúdo legível e cabeçalho deixa de ficar fixo quando a altura disponível da janela é reduzida.
 - **Orientação da tela:** conteúdo, menu, notícias, jogos e tabela verificados em retrato e paisagem, sem problemas visuais identificados.
 - **Tela estreita (320 × 568 px):** títulos das notícias, textos dos jogos e tabela de classificação verificados; conteúdo organizado, sem rolagem horizontal na página.
+- **Movimento reduzido:** comportamento testado no navegador com os efeitos de animação do Windows desativados; a navegação entre seções ocorreu sem animação suave. Aprovado na verificação manual inicial.
 
 ### Acessibilidade
 
