@@ -26,12 +26,14 @@
 ### Acessibilidade
 
 - **Navegação por teclado:** links e elementos interativos acessados com `Tab` e `Shift + Tab`; destaque visual do foco identificado e links testados com `Enter`.
-- **Legibilidade visual:** textos e links avaliados visualmente; aparência considerada legível. O contraste ainda precisa ser medido com uma ferramenta específica.
 
-- **Contraste do texto principal:** texto `#212121` sobre fundo branco `#FFFFFF`, com razão de contraste aproximada de 16,1:1; aprovado para WCAG AA e AAA.
-- **Contraste vermelho e branco:** combinação `#C62828` e `#FFFFFF`, com razão de contraste aproximada de 5,62:1; aprovada para texto normal no WCAG AA.
-- **Estado hover do botão do menu:** texto vermelho sobre fundo branco; contraste aproximado de 5,62:1, aprovado para texto normal no WCAG AA.
-- **Limitação da verificação:** o fundo real do cabeçalho e o estado normal do botão do menu ainda precisam ser confirmados. Os resultados acima se referem apenas às combinações de cores identificadas.
+- **Legibilidade visual:** textos e links avaliados visualmente; aparência considerada legível. As combinações de cores do texto principal, cabeçalho, tabela e rodapé foram verificadas com o WebAIM Contrast Checker.
+
+- **Contraste do texto principal:** texto `#212121` sobre fundo branco `#FFFFFF`, com razão aproximada de 16,1:1; atende ao WCAG AA e AAA.
+- **Contraste do cabeçalho e da tabela:** texto branco `#FFFFFF` sobre vermelho `#C62828`; aprovado no WCAG AA para texto normal e no AAA para texto grande.
+- **Contraste do rodapé:** texto branco `#FFFFFF` sobre fundo `#252525`; aprovado no WCAG AA e AAA para texto normal.
+- **Ferramenta utilizada:** WebAIM Contrast Checker. Combinações de cores verificadas manualmente em 13/10/2026.
+- **Limitação da verificação:** foram verificadas as combinações de cores indicadas; outras combinações e estados de interação ainda precisam ser avaliados individualmente.
 
 **Observação:** os estados de interação e o movimento reduzido foram conferidos no código; nem todos foram testados individualmente no navegador.
 
