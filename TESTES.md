@@ -35,6 +35,7 @@
 - **Contraste do rodapé:** texto branco `#FFFFFF` sobre fundo `#252525`; aprovado no WCAG AA e AAA para texto normal.
 - **Ferramenta utilizada:** WebAIM Contrast Checker. Combinações de cores verificadas manualmente em 13/10/2026.
 - **Limitação da verificação:** foram verificadas as combinações de cores indicadas; outras combinações e estados de interação ainda precisam ser avaliados individualmente.
+- **Foco visível:** destaque visual confirmado no botão do menu e nos links durante a navegação por teclado com `Tab` e `Shift + Tab`. Aprovado no teste manual.
 
 **Observação:** os estados de interação e o movimento reduzido foram conferidos no código; nem todos foram testados individualmente no navegador.
 
