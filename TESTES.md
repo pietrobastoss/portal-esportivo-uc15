@@ -13,7 +13,7 @@
 
 ### CSS e responsividade
 
-- **Estados de interação:** regras de `hover`, `active` e `focus-visible` identificadas no CSS.
+- **Estados de interação:** `hover` verificado nos links e no botão do menu; `active` verificado no botão, com redução visual de tamanho ao pressionar. Aprovados nos testes manuais realizados. Os links do menu ainda não possuem uma regra `:active` específica.
 - **Movimento reduzido:** regra `prefers-reduced-motion` identificada no CSS.
 - **Tabela responsiva:** aprovada em telas de 320 px, 375 px, 768 px e 1024 px, além de larguras inferiores a 320 px.
 - **Responsividade geral:** testada nas larguras de 320 px, 375 px, 768 px e 1024 px.
