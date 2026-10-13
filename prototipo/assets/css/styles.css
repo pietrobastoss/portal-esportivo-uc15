@@ -325,6 +325,7 @@ section[id] {
 }
 
 
+
 /* 10. Tabela responsiva */
 .tabela-responsiva {
     width: 100%;
@@ -333,16 +334,28 @@ section[id] {
     background-color: var(--cor-superficie);
 }
 
-
 .tabela-responsiva table {
     width: 100%;
-    table-layout: fixed;
+    border-collapse: collapse;
 }
 
 .tabela-responsiva th,
 .tabela-responsiva td {
-    padding: 0.75rem 0.25rem;
-    overflow-wrap: anywhere;
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.tabela-responsiva th:first-child,
+.tabela-responsiva td:first-child,
+.tabela-responsiva th:last-child,
+.tabela-responsiva td:last-child {
+    white-space: nowrap;
+}
+
+.tabela-responsiva th:nth-child(2),
+.tabela-responsiva td:nth-child(2) {
+    overflow-wrap: normal;
 }
 
 
