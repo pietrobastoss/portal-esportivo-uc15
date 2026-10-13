@@ -1,0 +1,40 @@
+/*
+Theme Name: Temporada em Jogo
+Description: Tema filho personalizado para o portal esportivo Temporada em Jogo.
+Author: Pietro Bastos
+Template: twentytwentyfive
+Version: 1.0.0
+Text Domain: temporada-em-jogo
+*/
+
+/* Identidade visual do portal */
+:root {
+    --cor-destaque: #c62828;
+    --cor-texto: #252525;
+    --cor-fundo: #ffffff;
+}
+
+/* Aparência geral */
+body {
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+/* Links */
+a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Destaque visual do portal */
+.wp-block-site-title a {
+    text-decoration: none;
+}
+
+.wp-block-post-title a:hover {
+    color: var(--cor-destaque);
+}
