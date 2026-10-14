@@ -7,34 +7,383 @@ Version: 1.0.0
 Text Domain: temporada-em-jogo
 */
 
-/* Identidade visual do portal */
+/* 1. Identidade visual */
 :root {
-    --cor-destaque: #c62828;
-    --cor-texto: #252525;
-    --cor-fundo: #ffffff;
+    --cor-principal: #c62828;
+    --cor-principal-escura: #8e0000;
+    --cor-fundo: #f5f5f5;
+    --cor-superficie: #ffffff;
+    --cor-texto: #212121;
+    --cor-texto-secundario: #666666;
+    --cor-borda: #dddddd;
+
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-medio: 1rem;
+    --espacamento-grande: 1.5rem;
+    --espacamento-extra: 2rem;
+
+    --largura-conteudo: 75rem;
+    --raio-borda: 0.5rem;
 }
 
-/* Aparência geral */
-body {
+/* 2. Oculta os elementos padrão do tema WordPress na página inicial */
+body.home #header,
+body.home #footer,
+body.home #page > hr {
+    display: none;
+}
+
+/* 3. Estilos gerais limitados ao portal */
+.temporada-portal,
+.temporada-portal * {
+    box-sizing: border-box;
+}
+
+.temporada-portal {
     color: var(--cor-texto);
     background-color: var(--cor-fundo);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
-/* Links */
-a {
-    text-decoration-thickness: 1px;
+.temporada-portal img {
+    display: block;
+    max-width: 100%;
+}
+
+.temporada-portal a {
+    color: var(--cor-principal);
     text-underline-offset: 3px;
 }
 
-a:hover {
-    color: var(--cor-destaque);
+.temporada-portal a:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 4px;
 }
 
-/* Destaque visual do portal */
-.wp-block-site-title a {
+.temporada-portal h1,
+.temporada-portal h2,
+.temporada-portal h3 {
+    line-height: 1.2;
+}
+
+/* 4. Cabeçalho */
+.temporada-portal > header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: var(--espacamento-medio);
+    color: var(--cor-superficie);
+    background-color: var(--cor-principal);
+}
+
+.temporada-portal > header > a {
+    color: inherit;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
     text-decoration: none;
 }
 
-.wp-block-post-title a:hover {
-    color: var(--cor-destaque);
+.temporada-portal > header p {
+    margin: var(--espacamento-pequeno) 0;
+}
+
+/* 5. Menu de navegação */
+.temporada-portal nav ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: var(--espacamento-medio) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.temporada-portal nav a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--cor-superficie);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.temporada-portal nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.temporada-portal nav a[aria-current="location"] {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    font-weight: 800;
+}
+
+/* Botão do menu mobile */
+.temporada-portal .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.6rem 0.9rem;
+    border: 2px solid var(--cor-superficie);
+    border-radius: var(--raio-borda);
+    color: var(--cor-superficie);
+    background-color: transparent;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.temporada-portal .menu-toggle:hover {
+    color: var(--cor-principal);
+    background-color: var(--cor-superficie);
+}
+
+.temporada-portal .menu-toggle:active {
+    transform: scale(0.98);
+}
+
+.temporada-portal .menu-toggle:focus-visible,
+.temporada-portal > header a:focus-visible,
+.temporada-portal nav a:focus-visible,
+.temporada-portal > footer a:focus-visible {
+    outline: 3px solid var(--cor-superficie);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.temporada-portal .menu-toggle-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* Menu fechado por padrão no celular */
+.temporada-portal #menu-principal {
+    display: none;
+}
+
+.temporada-portal #menu-principal.menu-aberto {
+    display: block;
+}
+
+/* 6. Conteúdo principal */
+.temporada-portal main {
+    width: min(100% - 2rem, var(--largura-conteudo));
+    margin-inline: auto;
+    padding-block: var(--espacamento-medio);
+}
+
+.temporada-portal section {
+    margin-bottom: var(--espacamento-extra);
+}
+
+.temporada-portal h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+.temporada-portal h2 {
+    padding-bottom: var(--espacamento-pequeno);
+    border-bottom: 2px solid var(--cor-principal);
+}
+
+/* 7. Cartões de conteúdo */
+.temporada-portal article {
+    container-type: inline-size;
+    margin-bottom: var(--espacamento-medio);
+    padding: var(--espacamento-medio);
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+}
+
+@container (min-width: 25rem) {
+    .temporada-portal article h3 {
+        font-size: 1.35rem;
+    }
+
+    .temporada-portal article p {
+        max-width: 65ch;
+    }
+}
+
+.temporada-portal article p:first-child {
+    color: var(--cor-texto-secundario);
+}
+
+.temporada-portal article a {
+    display: inline-block;
+    margin-top: var(--espacamento-pequeno);
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.temporada-portal article a:hover {
+    color: var(--cor-principal-escura);
+}
+
+/* Destaque principal */
+.temporada-portal #inicio > article {
+    padding: var(--espacamento-grande);
+    border-top: 5px solid var(--cor-principal);
+}
+
+.temporada-portal #inicio > article p:first-child {
+    color: var(--cor-principal);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+/* Notícias */
+.temporada-portal #noticias article h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.temporada-portal #noticias article p {
+    color: var(--cor-texto-secundario);
+}
+
+/* Jogos */
+.temporada-portal #jogos article h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.temporada-portal #jogos article p:last-child {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* 8. Tabela de classificação */
+.temporada-portal .tabela-responsiva {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--raio-borda);
+    background-color: var(--cor-superficie);
+}
+
+.temporada-portal .tabela-responsiva table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--cor-superficie);
+}
+
+.temporada-portal caption {
+    padding: var(--espacamento-medio);
+    font-weight: 700;
+    text-align: left;
+}
+
+.temporada-portal th,
+.temporada-portal td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+.temporada-portal th {
+    color: var(--cor-superficie);
+    background-color: var(--cor-principal);
+}
+
+.temporada-portal tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.temporada-portal tbody tr:hover {
+    background-color: #ffebee;
+}
+
+.temporada-portal th:first-child,
+.temporada-portal td:first-child,
+.temporada-portal th:last-child,
+.temporada-portal td:last-child {
+    white-space: nowrap;
+}
+
+/* 9. Rodapé */
+.temporada-portal > footer {
+    padding: var(--espacamento-grande);
+    color: var(--cor-superficie);
+    background-color: #252525;
+    text-align: center;
+}
+
+.temporada-portal > footer p {
+    margin: var(--espacamento-pequeno) 0;
+}
+
+/* 10. Tablets e computadores */
+@media (min-width: 48rem) {
+    .temporada-portal > header {
+        padding-inline: max(
+            1rem,
+            calc((100% - var(--largura-conteudo)) / 2)
+        );
+    }
+
+    .temporada-portal nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    
+    .temporada-portal #menu-principal {
+        display: block;
+    }
+
+    .temporada-portal main {
+        padding-block: var(--espacamento-grande);
+    }
+
+    .temporada-portal #noticias,
+    .temporada-portal #jogos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--espacamento-medio);
+    }
+
+    .temporada-portal #noticias h2,
+    .temporada-portal #jogos h2 {
+        grid-column: 1 / -1;
+    }
+
+    .temporada-portal #noticias article,
+    .temporada-portal #jogos article {
+        margin-bottom: 0;
+    }
+}
+
+/* 11. Ajustes para telas pequenas */
+@media (max-width: 47.99rem) {
+    .temporada-portal > header {
+        position: sticky;
+    }
+
+    .temporada-portal #menu-principal ul {
+        flex-direction: column;
+    }
+}
+
+/* 12. Acessibilidade e navegação */
+.temporada-portal section[id] {
+    scroll-margin-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .temporada-portal {
+        scroll-behavior: auto;
+    }
+}
+
+@media (max-height: 30rem) {
+    .temporada-portal > header {
+        position: static;
+    }
 }
