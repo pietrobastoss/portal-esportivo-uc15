@@ -47,33 +47,48 @@ get_header();
             </article>
         </section>
 
-        <section id="noticias" aria-labelledby="titulo-noticias">
-            <h2 id="titulo-noticias">Últimas notícias</h2>
+   
+<section id="noticias" aria-labelledby="titulo-noticias">
+    <h2 id="titulo-noticias">Últimas notícias</h2>
+
+    <?php
+    $noticias = new WP_Query(array(
+        'post_type'      => 'post',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish'
+    ));
+
+    if ($noticias->have_posts()) :
+        while ($noticias->have_posts()) :
+            $noticias->the_post();
+    ?>
 
             <article>
-                <h3>Equipes se preparam para a próxima rodada</h3>
+                <h3>
+                    <a href="<?php echo esc_url(get_permalink()); ?>">
+                        <?php echo esc_html(get_the_title()); ?>
+                    </a>
+                </h3>
+
                 <p>
-                    Clubes intensificam a preparação para os próximos
-                    compromissos da temporada.
+                    <?php echo esc_html(get_the_excerpt()); ?>
                 </p>
             </article>
 
-            <article>
-                <h3>Disputa pelas primeiras posições aumenta</h3>
-                <p>
-                    A classificação fictícia serve para demonstrar
-                    como as informações serão apresentadas.
-                </p>
-            </article>
+    <?php
+        endwhile;
+    else :
+    ?>
 
-            <article>
-                <h3>Jovens talentos ganham espaço no futebol</h3>
-                <p>
-                    Uma notícia demonstrativa sobre novos jogadores
-                    e oportunidades nos clubes brasileiros.
-                </p>
-            </article>
-        </section>
+        <p>Nenhuma notícia publicada no momento.</p>
+
+    <?php
+    endif;
+
+    wp_reset_postdata();
+    ?>
+</section>
+
 
         <section id="jogos" aria-labelledby="titulo-jogos">
             <h2 id="titulo-jogos">Próximos jogos</h2>
