@@ -55,7 +55,8 @@ get_header();
     $noticias = new WP_Query(array(
         'post_type'      => 'post',
         'posts_per_page' => 3,
-        'post_status'    => 'publish'
+        'post_status'    => 'publish',
+        'category_name' => 'noticias'
     ));
 
     if ($noticias->have_posts()) :
@@ -90,42 +91,81 @@ get_header();
 </section>
 
 
-        <section id="jogos" aria-labelledby="titulo-jogos">
-            <h2 id="titulo-jogos">Próximos jogos</h2>
+       
+<section id="jogos" aria-labelledby="titulo-jogos">
+    <h2 id="titulo-jogos">Próximos jogos</h2>
+
+    <?php
+    $jogos = new WP_Query(array(
+        'post_type'      => 'post',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+        'category_name'  => 'jogos'
+    ));
+
+    if ($jogos->have_posts()) :
+        while ($jogos->have_posts()) :
+            $jogos->the_post();
+    ?>
 
             <article>
-                <h3>Equipe Azul x Equipe Vermelha</h3>
-                <p>Competição demonstrativa</p>
-                <p>Data e horário: a definir</p>
+                <h3>
+                    <a href="<?php echo esc_url(get_permalink()); ?>">
+                        <?php echo esc_html(get_the_title()); ?>
+                    </a>
+                </h3>
+
+               
+                 <div class="detalhes-jogo">
+                    <?php the_content(); ?>
+                </div>
+
             </article>
 
-            <article>
-                <h3>Equipe Verde x Equipe Branca</h3>
-                <p>Competição demonstrativa</p>
-                <p>Data e horário: a definir</p>
-            </article>
-        </section>
+    <?php
+        endwhile;
+    else :
+    ?>
 
-        <section id="classificacao" aria-labelledby="titulo-classificacao">
-            <h2 id="titulo-classificacao">Classificação</h2>
+        <p>Nenhum jogo cadastrado no momento.</p>
 
-            <p>
-                Tabela ilustrativa. Os dados abaixo não representam
-                a classificação real de uma competição.
-            </p>
+    <?php
+    endif;
+
+    wp_reset_postdata();
+    ?>
+</section>
+
+
+        
+
+<section id="classificacao" aria-labelledby="titulo-classificacao">
+    <h2 id="titulo-classificacao">Classificação</h2>
+
+    <?php
+    $classificacao = new WP_Query(array(
+        'post_type'      => 'post',
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+        'category_name'  => 'classificacao'
+    ));
+
+    if ($classificacao->have_posts()) :
+        while ($classificacao->have_posts()) :
+            $classificacao->the_post();
+    ?>
+
+            <h3><?php echo esc_html(get_the_title()); ?></h3>
 
             <div class="tabela-responsiva">
                 <table>
-                    <caption>Classificação fictícia do campeonato</caption>
-
                     <thead>
                         <tr>
-                            <th scope="col">Pos.</th>
+                            <th scope="col">Posição</th>
                             <th scope="col">Equipe</th>
                             <th scope="col">Pontos</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
                             <td>1º</td>
@@ -145,7 +185,24 @@ get_header();
                     </tbody>
                 </table>
             </div>
-        </section>
+
+            <p><small>Classificação fictícia para fins acadêmicos.</small></p>
+
+    <?php
+        endwhile;
+    else :
+    ?>
+
+        <p>Nenhuma classificação cadastrada no momento.</p>
+
+    <?php
+    endif;
+
+    wp_reset_postdata();
+    ?>
+</section>
+
+
 
     </main>
 
