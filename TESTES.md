@@ -56,3 +56,16 @@ As validações de contraste, os testes individuais dos estados de interação e
 - **Verificações automáticas:** nenhuma auditoria de acessibilidade foi identificada como reprovada no relatório consultado.
 - **Verificações manuais:** o Lighthouse apresentou itens adicionais que precisam ser conferidos manualmente; nem todos se aplicam necessariamente às funcionalidades atuais do projeto.
 - **Contraste:** a pontuação automática foi excelente, mas o contraste ainda precisa ser medido especificamente para confirmar a conformidade.
+
+## 4. Testes da integração com WordPress
+
+- **Ambiente local:** portal aberto e testado por meio do WordPress com XAMPP.
+- **Notícias dinâmicas:** publicação cadastrada no WordPress exibida corretamente na seção Últimas notícias.
+- **Jogos dinâmicos:** publicação da categoria Jogos exibida na seção Próximos jogos.
+- **Formatação dos jogos:** conteúdo completo exibido com parágrafos separados após ajuste no template PHP.
+- **Classificação:** tabela com as colunas Posição, Equipe e Pontos exibida corretamente.
+- **Navegação pelas publicações:** títulos das notícias e dos jogos permitem abrir suas respectivas publicações.
+- **Separação por categorias:** consultas de notícias e jogos filtradas pelas categorias correspondentes.
+- **Resultado:** funcionalidades verificadas manualmente no navegador e aprovadas nos testes realizados em ambiente local.
+
+**Limitação:** a tabela de classificação possui dados de demonstração definidos no código PHP e ainda não é atualizada automaticamente a partir de resultados reais.
