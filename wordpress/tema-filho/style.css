@@ -119,7 +119,10 @@ body.home #page > hr {
     text-underline-offset: 5px;
     font-weight: 800;
 }
-
+/* Exibe o botão hambúrguer apenas em telas pequenas */
+.temporada-portal .menu-toggle {
+    display: none;
+}
 /* Botão do menu mobile */
 .temporada-portal .menu-toggle {
     display: flex;
@@ -337,6 +340,9 @@ body.home #page > hr {
     .temporada-portal #menu-principal {
         display: block;
     }
+    .temporada-portal .menu-toggle {
+        display: none;
+    }
 
     .temporada-portal main {
         padding-block: var(--espacamento-grande);
@@ -369,6 +375,9 @@ body.home #page > hr {
     .temporada-portal #menu-principal ul {
         flex-direction: column;
     }
+    .temporada-portal .menu-toggle {
+        display: flex;
+    }
 }
 
 /* 12. Acessibilidade e navegação */
@@ -386,4 +395,131 @@ body.home #page > hr {
     .temporada-portal > header {
         position: static;
     }
+}
+
+
+/* Galeria de destaques */
+.temporada-portal .trilho-destaques {
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.temporada-portal .trilho-destaques:active {
+    cursor: grabbing;
+}
+
+.temporada-portal .destaque-slide {
+    min-height: 15rem;
+    padding: var(--espacamento-grande);
+    border-top: 5px solid var(--cor-principal);
+}
+
+.temporada-portal .destaque-slide > p:first-child {
+    color: var(--cor-principal);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.temporada-portal .destaque-slide h2 {
+    border-bottom: 0;
+}
+
+.temporada-portal .controles-destaques {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacamento-medio);
+    margin-top: var(--espacamento-medio);
+}
+
+.temporada-portal .controles-destaques button {
+    padding: 0.65rem 0.9rem;
+    border: 2px solid var(--cor-principal);
+    border-radius: var(--raio-borda);
+    color: var(--cor-superficie);
+    background-color: var(--cor-principal);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.temporada-portal .controles-destaques button:hover {
+    background-color: var(--cor-principal-escura);
+}
+
+.temporada-portal .controles-destaques button:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 4px;
+}
+
+.temporada-portal .controles-destaques #estado-destaques {
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.temporada-portal .instrucao-destaques {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+}
+
+
+/* Formulário de sugestão de pauta */
+.temporada-portal #form-sugestao {
+    display: grid;
+    gap: var(--espacamento-medio);
+    max-width: 42rem;
+}
+
+.temporada-portal .campo-formulario {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.temporada-portal .campo-formulario label {
+    font-weight: 700;
+}
+
+.temporada-portal .campo-formulario input,
+.temporada-portal .campo-formulario textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #767676;
+    border-radius: var(--raio-borda);
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+    font: inherit;
+}
+
+.temporada-portal .campo-formulario input:focus-visible,
+.temporada-portal .campo-formulario textarea:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 2px;
+}
+
+.temporada-portal #form-sugestao button {
+    justify-self: start;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--cor-principal);
+    border-radius: var(--raio-borda);
+    background-color: var(--cor-principal);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.temporada-portal #form-sugestao button:hover {
+    background-color: var(--cor-principal-escura);
+}
+
+.temporada-portal #form-sugestao button:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 4px;
+}
+
+.temporada-portal #limite-mensagem {
+    color: var(--cor-texto-secundario);
 }

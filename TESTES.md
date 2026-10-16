@@ -69,3 +69,25 @@ As validações de contraste, os testes individuais dos estados de interação e
 - **Resultado:** funcionalidades verificadas manualmente no navegador e aprovadas nos testes realizados em ambiente local.
 
 **Limitação:** a tabela de classificação possui dados de demonstração definidos no código PHP e ainda não é atualizada automaticamente a partir de resultados reais.
+
+
+## Testes das funcionalidades do MVP
+
+### Busca de notícias
+- [x] Filtragem das notícias por texto digitado.
+- [x] Mensagem quando nenhuma notícia corresponde à busca.
+- [x] Atualização do resultado da busca na tela.
+
+### Carrossel de destaques
+- [x] Navegação pelos botões anterior e próximo.
+- [x] Atualização do indicador de destaque.
+- [x] Navegação por arraste horizontal.
+
+### Formulário de sugestão
+- [x] Validação dos campos obrigatórios.
+- [x] Rejeição de e-mail inválido.
+- [x] Mensagem de confirmação após validação.
+- [x] Aviso de que os dados não são enviados nem armazenados.
+- [x] Verificação visual dos campos, botão e foco.
+
+**Resultado:** todos os testes manuais acima foram aprovados no WordPress local.

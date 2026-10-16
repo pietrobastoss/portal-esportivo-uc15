@@ -33,30 +33,104 @@ get_header();
 
     <main id="inicio">
 
-        <section aria-labelledby="titulo-destaque">
-            <h1 id="titulo-destaque">O futebol brasileiro em destaque</h1>
+   
+<section id="destaques" aria-labelledby="titulo-destaque">
+    <h1 id="titulo-destaque">O futebol brasileiro em destaque</h1>
 
-            <article>
-                <p>DESTAQUE DO DIA</p>
-                <h2>Campeonato nacional promete fortes emoções</h2>
-                <p>
-                    Uma notícia fictícia para apresentar as principais
-                    informações esportivas do portal.
-                </p>
-                <a href="#noticias">Confira as últimas notícias</a>
-            </article>
-        </section>
+    <div
+        class="trilho-destaques"
+        id="trilho-destaques"
+        aria-roledescription="carrossel"
+        aria-label="Destaques esportivos"
+    >
+        <article class="destaque-slide" aria-label="Destaque 1 de 3">
+            <p>DESTAQUE DO DIA</p>
+            <h2>Campeonato nacional promete fortes emoções</h2>
+            <p>
+                Uma notícia fictícia para apresentar as principais
+                informações esportivas do portal.
+            </p>
+            <a href="#noticias">Confira as últimas notícias</a>
+        </article>
+
+        <article class="destaque-slide" aria-label="Destaque 2 de 3" hidden>
+            <p>GIRO DOS CLUBES</p>
+            <h2>Equipes intensificam preparação para a rodada</h2>
+            <p>
+                Conteúdo fictício sobre a preparação dos clubes
+                para os próximos confrontos.
+            </p>
+            <a href="#jogos">Confira os próximos jogos</a>
+        </article>
+
+        <article class="destaque-slide" aria-label="Destaque 3 de 3" hidden>
+            <p>NA TABELA</p>
+            <h2>A disputa pelas primeiras posições continua</h2>
+            <p>
+                Um resumo fictício sobre a disputa por posições
+                na classificação do campeonato.
+            </p>
+            <a href="#classificacao">Veja a classificação</a>
+        </article>
+    </div>
+
+    <div class="controles-destaques">
+        <button type="button" id="destaque-anterior">
+            Destaque anterior
+        </button>
+
+        <p
+            id="estado-destaques"
+            role="status"
+            aria-live="polite"
+        >
+            Destaque 1 de 3
+        </p>
+
+        <button type="button" id="destaque-proximo">
+            Próximo destaque
+        </button>
+    </div>
+
+    <p class="instrucao-destaques">
+        Você também pode arrastar o destaque horizontalmente
+        com o mouse ou o dedo.
+    </p>
+</section>
+
 
    
-<section id="noticias" aria-labelledby="titulo-noticias">
+
+        <section id="noticias" aria-labelledby="titulo-noticias">
     <h2 id="titulo-noticias">Últimas notícias</h2>
+
+    <div class="busca-noticias">
+        <label for="busca-noticias">
+            Buscar notícias por título ou conteúdo
+        </label>
+
+        <input
+            type="search"
+            id="busca-noticias"
+            placeholder="Ex.: Internacional"
+            aria-describedby="resultado-busca-noticias"
+        >
+
+        <p
+            id="resultado-busca-noticias"
+            role="status"
+            aria-live="polite"
+        >
+            Exibindo as notícias mais recentes.
+        </p>
+    </div>
 
     <?php
     $noticias = new WP_Query(array(
         'post_type'      => 'post',
         'posts_per_page' => 3,
         'post_status'    => 'publish',
-        'category_name' => 'noticias'
+        'category_name'  => 'noticias'
     ));
 
     if ($noticias->have_posts()) :
@@ -64,7 +138,7 @@ get_header();
             $noticias->the_post();
     ?>
 
-            <article>
+            <article class="noticia-item">
                 <h3>
                     <a href="<?php echo esc_url(get_permalink()); ?>">
                         <?php echo esc_html(get_the_title()); ?>
@@ -89,6 +163,7 @@ get_header();
     wp_reset_postdata();
     ?>
 </section>
+
 
 
        
@@ -202,6 +277,70 @@ get_header();
     ?>
 </section>
 
+        
+<section id="sugestao" aria-labelledby="titulo-sugestao">
+            <h2 id="titulo-sugestao">Sugira uma pauta</h2>
+
+            <p id="instrucoes-sugestao">
+                Tem uma sugestão de assunto para o portal?
+                Preencha os campos abaixo. Os campos com * são obrigatórios.
+            </p>
+
+            <form id="form-sugestao" aria-describedby="instrucoes-sugestao">
+                <div class="campo-formulario">
+                    <label for="nome-sugestao">Seu nome *</label>
+                    <input
+                        type="text"
+                        id="nome-sugestao"
+                        name="nome"
+                        autocomplete="name"
+                        required
+                        maxlength="80"
+                    >
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="email-sugestao">Seu e-mail *</label>
+                    <input
+                        type="email"
+                        id="email-sugestao"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="assunto-sugestao">Assunto da pauta *</label>
+                    <input
+                        type="text"
+                        id="assunto-sugestao"
+                        name="assunto"
+                        required
+                        maxlength="120"
+                    >
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="mensagem-sugestao">Descreva sua sugestão *</label>
+                    <textarea
+                        id="mensagem-sugestao"
+                        name="mensagem"
+                        rows="5"
+                        required
+                        maxlength="1000"
+                        aria-describedby="limite-mensagem"
+                    ></textarea>
+                    <small id="limite-mensagem">
+                        Máximo de 1000 caracteres.
+                    </small>
+                </div>
+
+                <button type="submit">Validar sugestão</button>
+
+                <p id="resultado-sugestao" role="status" aria-live="polite"></p>
+            </form>
+        </section>
 
 
     </main>

@@ -94,6 +94,130 @@ linksMenu.forEach((link) => {
 window.addEventListener("scroll", atualizarMenuAtivo);
 window.addEventListener("resize", atualizarMenuAtivo);
 
+
 atualizarMenuAtivo();
 
+// Busca e filtro de notícias
+const campoBusca = document.querySelector("#busca-noticias");
+const resultadoBusca = document.querySelector("#resultado-busca-noticias");
+const noticias = document.querySelectorAll("#noticias .noticia-item");
+
+if (campoBusca && resultadoBusca && noticias.length > 0) {
+    campoBusca.addEventListener("input", () => {
+        const termo = campoBusca.value
+            .trim()
+            .toLocaleLowerCase("pt-BR");
+
+        let quantidadeVisivel = 0;
+
+        noticias.forEach((noticia) => {
+            const texto = noticia.textContent.toLocaleLowerCase("pt-BR");
+            const corresponde = texto.includes(termo);
+
+            noticia.hidden = !corresponde;
+
+            if (corresponde) {
+                quantidadeVisivel++;
+            }
+        });
+
+        if (termo === "") {
+            resultadoBusca.textContent =
+                `Exibindo ${quantidadeVisivel} notícias mais recentes.`;
+        } else if (quantidadeVisivel === 0) {
+            resultadoBusca.textContent =
+                "Nenhuma notícia encontrada para essa busca.";
+        } else {
+            resultadoBusca.textContent =
+                `${quantidadeVisivel} notícia(s) encontrada(s).`;
+        }
+    });
+}
+
+ // Galeria de destaques
+ const trilhoDestaques = document.querySelector("#trilho-destaques");
+ const slidesDestaques = document.querySelectorAll(".destaque-slide");
+ const botaoAnterior = document.querySelector("#destaque-anterior");
+ const botaoProximo = document.querySelector("#destaque-proximo");
+ const estadoDestaques = document.querySelector("#estado-destaques");
+ 
+ if (
+     trilhoDestaques &&
+     slidesDestaques.length > 0 &&
+     botaoAnterior &&
+     botaoProximo &&
+     estadoDestaques
+ ) {
+     let indiceDestaque = 0;
+     let inicioArraste = null;
+ 
+     function mostrarDestaque(indice) {
+         indiceDestaque =
+             (indice + slidesDestaques.length) % slidesDestaques.length;
+ 
+         slidesDestaques.forEach((slide, i) => {
+             slide.hidden = i !== indiceDestaque;
+         });
+ 
+         estadoDestaques.textContent =
+             `Destaque ${indiceDestaque + 1} de ${slidesDestaques.length}`;
+     }
+ 
+     botaoAnterior.addEventListener("click", () => {
+         mostrarDestaque(indiceDestaque - 1);
+     });
+ 
+     botaoProximo.addEventListener("click", () => {
+         mostrarDestaque(indiceDestaque + 1);
+     });
+ 
+     trilhoDestaques.addEventListener("pointerdown", (evento) => {
+         inicioArraste = evento.clientX;
+     });
+ 
+     trilhoDestaques.addEventListener("pointerup", (evento) => {
+         if (inicioArraste === null) {
+             return;
+         }
+ 
+         const distancia = evento.clientX - inicioArraste;
+ 
+         if (distancia > 50) {
+             mostrarDestaque(indiceDestaque - 1);
+         } else if (distancia < -50) {
+             mostrarDestaque(indiceDestaque + 1);
+         }
+ 
+         inicioArraste = null;
+     });
+ 
+     trilhoDestaques.addEventListener("pointercancel", () => {
+         inicioArraste = null;
+     });
+ 
+     mostrarDestaque(0);
+ }
+
+ 
+    // Validação do formulário de sugestão de pauta
+    const formularioSugestao = document.querySelector("#form-sugestao");
+    const resultadoSugestao = document.querySelector("#resultado-sugestao");
+
+    if (formularioSugestao && resultadoSugestao) {
+        formularioSugestao.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            if (!formularioSugestao.checkValidity()) {
+                formularioSugestao.reportValidity();
+                return;
+            }
+
+            resultadoSugestao.textContent =
+                "Sugestão validada com sucesso! Este formulário é demonstrativo: nenhum dado foi enviado ou armazenado.";
+
+            formularioSugestao.reset();
+        });
+    }
+
+ 
 });
