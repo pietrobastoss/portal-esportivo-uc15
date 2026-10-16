@@ -91,3 +91,16 @@ As validações de contraste, os testes individuais dos estados de interação e
 - [x] Verificação visual dos campos, botão e foco.
 
 **Resultado:** todos os testes manuais acima foram aprovados no WordPress local.
+
+
+## Testes de usuários e permissões no WordPress
+
+- [x] Conta principal com função Administrador.
+- [x] Criação do usuário fictício `editor.teste` com função Editor.
+- [x] Login realizado com sucesso pela conta Editor.
+- [x] Acesso ao menu de publicações confirmado.
+- [x] Menu Aparência não aparece para a conta Editor.
+
+**Resultado:** os testes manuais confirmaram diferenças de acesso entre as funções Administrador e Editor no ambiente WordPress local.
+
+**Limitação:** foram verificadas as opções visíveis no painel. Não foram testadas todas as permissões possíveis de cada função.

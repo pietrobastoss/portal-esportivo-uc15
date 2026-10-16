@@ -66,3 +66,14 @@ As regras podem ser consultadas em `prototipo/assets/css/styles.css`.
 **Justificativa:** o foco do projeto é disponibilizar notícias, próximos jogos e classificação, com navegação responsiva e acessível. A implementação de favoritos não é essencial para validar essas funcionalidades principais e aumentaria o escopo de desenvolvimento.
 
 **Impacto:** o portal não armazenará notícias favoritas no navegador nem em uma conta de usuário nesta versão. A funcionalidade poderá ser reconsiderada em uma evolução futura, caso surja essa necessidade.
+
+
+## Usuário de teste e permissões
+
+Foi criado o usuário fictício `editor.teste`, com a função Editor, para verificar as permissões do WordPress no ambiente local.
+
+O login foi realizado com sucesso. O usuário conseguiu acessar as publicações, enquanto o menu Aparência não ficou disponível no painel.
+
+**Decisão:** manter o usuário de teste para apoiar a validação do projeto durante o desenvolvimento. A conta poderá ser removida após a conclusão dos testes, caso não seja mais necessária.
+
+**Limitação:** os testes realizados não abrangem todas as permissões da função Editor.
