@@ -64,7 +64,11 @@ Consulte `CMS.md` para detalhes sobre instalação, atualização e limitações
 
 Os procedimentos e resultados dos testes manuais estão registrados em `TESTES.md`. As evidências disponíveis ficam em `docs/evidencias/`.
 
-A pasta `tests/` ainda precisa receber e validar testes automatizados. Não considere uma suíte automatizada aprovada até que ela tenha sido executada.
+O projeto possui testes automatizados com Playwright, localizados em `tests/portal.spec.js`. Foram executados cinco testes com sucesso no Chromium, verificando as principais seções do portal, o menu mobile, o carrossel de destaques, a busca de notícias e o formulário de sugestão.
+
+Para executar os testes, instale as dependências com `npm install`, instale o navegador necessário com `npx playwright install chromium` e execute `npm test`.
+
+Os testes acessam o endereço `http://localhost/wordpress/`; portanto, o WordPress local precisa estar configurado e em execução antes da execução da suíte.
 
 ## Limitações conhecidas
 
