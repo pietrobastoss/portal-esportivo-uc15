@@ -43,7 +43,7 @@
 
 - Medir o contraste dos textos e componentes com uma ferramenta de acessibilidade.
 - Testar individualmente os estados de interação e o comportamento de movimento reduzido no navegador.
-- Implementar e executar testes automatizados conforme a evolução do projeto.
+- Ampliar a cobertura dos testes automatizados para outras resoluções, acessibilidade e possíveis cenários de erro.
 - Realizar testes em dispositivos físicos, quando possível.
 
 ## 3. Status
@@ -104,3 +104,23 @@ As validações de contraste, os testes individuais dos estados de interação e
 **Resultado:** os testes manuais confirmaram diferenças de acesso entre as funções Administrador e Editor no ambiente WordPress local.
 
 **Limitação:** foram verificadas as opções visíveis no painel. Não foram testadas todas as permissões possíveis de cada função.
+
+## 5. Testes automatizados com Playwright
+
+**Ambiente de execução**
+- Ferramenta: Playwright Test.
+- Navegador: Chromium.
+- Ambiente: WordPress local executado com XAMPP.
+- Resolução utilizada: 375 × 812 pixels.
+- Comando executado: `npx.cmd playwright test`.
+
+**Testes executados**
+- [x] Exibição das principais seções do portal.
+- [x] Abertura e fechamento do menu mobile.
+- [x] Navegação entre os destaques do carrossel.
+- [x] Filtragem das notícias pela busca, incluindo mensagem para busca sem resultados.
+- [x] Validação e confirmação do formulário de sugestão.
+
+**Resultado:** 5 testes aprovados e 0 reprovados na última execução, com duração aproximada de 3,2 segundos.
+
+**Limitação:** os testes automatizados cobrem as funcionalidades descritas, mas não substituem a avaliação completa de acessibilidade, desempenho, responsividade em diferentes dispositivos e integração com serviços externos. O formulário de sugestão realiza validação demonstrativa e não envia nem armazena os dados.

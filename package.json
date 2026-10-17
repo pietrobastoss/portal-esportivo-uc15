@@ -1,0 +1,19 @@
+{
+  "name": "portal-esportivo-uc15",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido para a UC15 — HTML Mobile First, com foco em design responsivo, acessibilidade e boas práticas de desenvolvimento web.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+  "test": "playwright test"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}
